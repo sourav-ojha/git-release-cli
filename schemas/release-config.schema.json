@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "release": {
+      "type": "object",
+      "properties": {
+        "baseBranch": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9._/-]+$"
+        },
+        "productionBranch": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9._/-]+$"
+        },
+        "branchPrefix": {
+          "default": "release",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9._/-]+$"
+        },
+        "branchTimestampFormat": {
+          "default": "YYYYMMDD-HHmmss",
+          "type": "string",
+          "minLength": 1
+        },
+        "productionMergeStyle": {
+          "default": "merge",
+          "type": "string",
+          "enum": [
+            "merge",
+            "squash"
+          ]
+        }
+      },
+      "required": [
+        "baseBranch",
+        "productionBranch"
+      ],
+      "additionalProperties": false
+    },
+    "pullRequest": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "title": {
+          "default": "Release: {date}",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 250
+        },
+        "draft": {
+          "default": false,
+          "type": "boolean"
+        },
+        "labels": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          }
+        },
+        "reviewers": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9@._/-]+$"
+          }
+        },
+        "assignees": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9@._/-]+$"
+          }
+        },
+        "includeCommitAuthors": {
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "git": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "remote": {
+          "default": "origin",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9@._/-]+$"
+        },
+        "fetchBeforeRelease": {
+          "default": true,
+          "type": "boolean"
+        },
+        "requireCleanWorkingTree": {
+          "default": true,
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "changelog": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "includeMerges": {
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "options": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "dryRun": {
+          "default": true,
+          "type": "boolean"
+        },
+        "pushBranch": {
+          "default": true,
+          "type": "boolean"
+        },
+        "createPullRequest": {
+          "default": true,
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "release"
+  ],
+  "additionalProperties": false
+}

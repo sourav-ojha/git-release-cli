@@ -1,0 +1,55 @@
+{
+  "name": "@sourav/git-release-cli",
+  "version": "0.1.0",
+  "description": "Reusable Git release automation CLI: release branch, categorized changelog, GitHub PR.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "release-cli": "./src/cli.js"
+  },
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src",
+    "schemas",
+    "examples",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:all": "vitest run",
+    "pack:check": "npm pack --dry-run",
+    "prepublishOnly": "npm run lint && npm test && npm run test:integration"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "git",
+    "release",
+    "changelog",
+    "cli",
+    "github"
+  ],
+  "dependencies": {
+    "commander": "^15.1.0",
+    "conventional-commits-parser": "^7.1.4",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.15.0",
+    "globals": "^17.14.0",
+    "vitest": "^5.1.1"
+  },
+  "author": "Sourav Ojha"
+}
