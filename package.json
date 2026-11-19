@@ -1,5 +1,5 @@
 {
-  "name": "@sourav/git-release-cli",
+  "name": "@souravojha/git-release-cli",
   "version": "0.1.0",
   "description": "Reusable Git release automation CLI: release branch, categorized changelog, GitHub PR.",
   "type": "module",

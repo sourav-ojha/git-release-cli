@@ -1,4 +1,4 @@
-# @sourav/git-release-cli
+# @souravojha/git-release-cli
 
 Reusable CLI that prepares production releases from Git history: it cuts a timestamped release branch at an exact commit, generates categorized release notes from Conventional Commits, pushes the branch and opens a GitHub Pull Request against your production branch.
 
@@ -7,7 +7,7 @@ The **release engine** is generic; each project only supplies a small JSON **con
 ## Installation
 
 ```bash
-npm install -g @sourav/git-release-cli
+npm install -g @souravojha/git-release-cli
 ```
 
 Provides the `release-cli` command.
@@ -190,7 +190,7 @@ Regenerate the JSON schema after changing `src/config/schema.js`: `node scripts/
 npm test && npm run test:integration && npm run lint
 npm version patch            # or minor / major; updates package.json and tags
 npm pack --dry-run
-npm publish --access public  # requires npm login and the @sourav scope
+npm publish --access public  # requires npm login and the @souravojha scope
 ```
 
 ## License

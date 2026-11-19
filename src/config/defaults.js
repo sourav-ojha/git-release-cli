@@ -1,6 +1,6 @@
 /** Starter configuration written by `release-cli init`. Dry-run is ON by design. */
 export const STARTER_CONFIG = {
-  $schema: './node_modules/@sourav/git-release-cli/schemas/release-config.schema.json',
+  $schema: './node_modules/@souravojha/git-release-cli/schemas/release-config.schema.json',
   release: {
     baseBranch: 'dev',
     productionBranch: 'main',
