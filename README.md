@@ -172,7 +172,7 @@ Use `--verbose` to log every Git and `gh` invocation.
 ## Development
 
 ```bash
-git clone <repo> && cd git-release-cli
+git clone https://github.com/sourav-ojha/git-release-cli.git && cd git-release-cli
 npm install
 npm run lint
 npm test                    # unit tests

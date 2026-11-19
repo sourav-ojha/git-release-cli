@@ -51,5 +51,13 @@
     "globals": "^17.14.0",
     "vitest": "^5.1.1"
   },
-  "author": "Sourav Ojha"
+  "author": "Sourav Ojha",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sourav-ojha/git-release-cli.git"
+  },
+  "homepage": "https://github.com/sourav-ojha/git-release-cli#readme",
+  "bugs": {
+    "url": "https://github.com/sourav-ojha/git-release-cli/issues"
+  }
 }
